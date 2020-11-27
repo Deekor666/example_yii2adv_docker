@@ -1,14 +1,14 @@
 ## gipnopill
-1. ```sh
+ ```sh
    $ docker-compose up -d
    ```
-2. ```sh
+ ```sh
    $ composer install
-      ```
-3. ```sh
+  ```
+ ```sh
    $ php init
-     ```
-4. app/common/config/main-local.php 
+```
+#### app/common/config/main-local.php >>
 
         'db' => [
             'class' => 'yii\db\Connection',
@@ -18,8 +18,8 @@
             'charset' => 'utf8',
         ],
 
-5. ```sh
+ ```sh
    $ docker exec -it (root_folder)_php_1 bash
    $ yes
    $ exit
-    ```
+```
