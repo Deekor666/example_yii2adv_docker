@@ -1,0 +1,34 @@
+version: '3.5'
+
+services:
+    nginx:
+        image: nginx:latest
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./images/nginx:/etc/nginx/conf.d
+            - ./www:/var/www
+            - ./logs:/var/log/nginx
+        depends_on:
+            - php
+    php:
+        build: ./images/php
+        volumes:
+            - ./www:/var/www
+        depends_on:
+            - db
+    db:
+        image: mysql:5.7
+        ports:
+            - "3306:3306"
+        volumes:
+            - ./db:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: library
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - "8080:8080"
