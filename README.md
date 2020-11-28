@@ -3,11 +3,18 @@
    $ docker-compose up -d
    ```
  ```sh
+   $ docker exec -it (root_folder)_php_1 bash
+   $ cd app/
    $ composer install
-  ```
- ```sh
    $ php init
-```
+   $ php yii migrate
+   $ yes
+   $ exit
+   ```
+```sh
+   $ sudo chmod 777 www/app
+   ```
+
 #### app/common/config/main-local.php >>
 
         'db' => [
@@ -18,8 +25,6 @@
             'charset' => 'utf8',
         ],
 
- ```sh
-   $ docker exec -it (root_folder)_php_1 bash
-   $ yes
-   $ exit
-```
+> front - 127.0.0.1
+> back  - 127.0.0.1/admin
+> db    - 127.0.0.1:8080
