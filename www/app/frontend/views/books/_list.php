@@ -1,6 +1,13 @@
 <?php
+
+use frontend\models\Books;
 use yii\helpers\Html;
 use yii\helpers\HtmlPurifier;
+
+/** @var Books $model
+ * @var array $authors
+ *
+ */
 ?>
 
 <div class="news-item">
