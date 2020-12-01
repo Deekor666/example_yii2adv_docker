@@ -65,6 +65,9 @@ AppAsset::register($this);
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
+        <?= Html::a('Книги', ['books/index'], ['class' => 'profile-link btn']) ?>
+        <?= Html::a('Авторы', ['authors/index'], ['class' => 'profile-link btn']) ?>
+
         <?= $content ?>
     </div>
 </div>
