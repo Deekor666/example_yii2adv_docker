@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controllers;
+namespace backend\controllers;
 
 class AuthorsController extends \yii\web\Controller
 {
