@@ -14,10 +14,10 @@ class m201130_130454_authors extends Migration
     {
         $this->createTable('authors', [
             'id' => $this->primaryKey(),
-            'name' => $this->text()->notNull(),
+            'name' => $this->text()->notNull()->append('CHARACTER SET utf8 COLLATE utf8_unicode_ci'),
             'date_birthday' => $this->dateTime()->notNull(),
             'rating' => $this->integer()
-        ]);
+        ], 'CHARACTER SET utf8 COLLATE utf8_unicode_ci');
 
     }
 

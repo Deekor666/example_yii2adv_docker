@@ -20,7 +20,7 @@ class BooksController extends Controller
                 'pageSize' => 10,
             ],
         ]);
-        $authors = Authors::find()->where('id > 0')->orderBy('id')->all();
+        $authors = Authors::find()->where('id is not null')->orderBy('id')->indexBy('id')->asArray()->all();
         $this->view->title = 'News List';
         return $this->render('index', ['listDataProvider' => $dataProvider, 'authors' => $authors]);
     }
