@@ -4,8 +4,10 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Books */
-/* @var $form yii\widgets\ActiveForm */
+/* @var $model frontend\models\Books
+ * @var $form yii\widgets\ActiveForm
+ * @var $authors array
+ */
 ?>
 
 <div class="books-form">
@@ -14,9 +16,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'author_id')->textInput() ?>
+    <?= $form->field($model, 'author_id')->dropDownList($authors, ['prompt' => 'выбрать автора']) ?>
 
-    <?= $form->field($model, 'date_write')->textInput() ?>
+    <?= $form->field($model, 'date_write')->textInput(['type' => 'date']) ?>
 
     <?= $form->field($model, 'rating')->textInput() ?>
 

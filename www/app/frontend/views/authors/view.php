@@ -4,10 +4,10 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Authors */
+/* @var $model frontend\models\Authors */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Authors', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Авторы', 'url' => ['authors/index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -16,11 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Изменить', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Уверены, что хотите удалить?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -29,10 +29,27 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'name:ntext',
-            'date_birthday',
-            'rating',
+            [
+                'attribute' => 'name',
+                'label' => 'Имя(Прозвище)',
+                'value'=>function($data){
+                    return $data->name;
+                }
+            ],
+            [
+                'attribute' => 'date_birthday',
+                'label' => 'Дата рождения',
+                'value'=>function($data){
+                    return date('d-m-Y', $data->date_birthday);
+                }
+            ],
+            [
+                'attribute' => 'rating',
+                'label' => 'Рейтинг',
+                'value'=>function($data){
+                    return $data->rating;
+                }
+            ],
         ],
     ]) ?>
 

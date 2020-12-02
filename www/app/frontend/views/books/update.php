@@ -3,12 +3,14 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Books */
+/* @var $model frontend\models\Books
+ * @var $authors array
+ */
 
-$this->title = 'Update Books: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Books', 'url' => ['index']];
+$this->title = 'Изменить книгу: ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Книги', 'url' => ['books/index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Изменить';
 ?>
 <div class="books-update">
 
@@ -16,6 +18,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'authors' => $authors
     ]) ?>
 
 </div>

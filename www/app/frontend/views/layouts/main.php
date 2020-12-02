@@ -29,30 +29,18 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => 'Библиотека',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => 'Книги', 'url' => ['/books/index']],
+        ['label' => 'Авторы', 'url' => ['/authors/index']],
+        ['label' => 'Добавить книгу', 'url' => ['/books/create']],
+        ['label' => 'Добавить автора', 'url' => ['/authors/create']],
     ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
@@ -61,13 +49,20 @@ AppAsset::register($this);
     ?>
 
     <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= Html::a('Книги', ['books/index'], ['class' => 'profile-link btn']) ?>
-        <?= Html::a('Авторы', ['authors/index'], ['class' => 'profile-link btn']) ?>
-
+        <?=
+        //хлебные крошки
+        Breadcrumbs::widget([
+            'itemTemplate' => "<li><i>{link}</i></li>\n",
+            'homeLink' => [
+                'label' => 'Главная ',
+                'url' => Yii::$app->homeUrl,
+                'title' => 'Главная',
+            ],
+        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        'options' => ['class' => 'breadcrumb', 'style' => ''],
+        ]);
+        ?>
+    <?= Alert::widget() ?>
         <?= $content ?>
     </div>
 </div>

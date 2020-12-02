@@ -14,7 +14,7 @@ class m201130_132426_addAuthorIdForeignKey extends Migration
     {
         // creates index for column `author_id`
         $this->createIndex(
-            'idx-book-author_id',
+            'idx-books-author_id',
             'books',
             'author_id'
         );
@@ -35,7 +35,7 @@ class m201130_132426_addAuthorIdForeignKey extends Migration
      */
     public function safeDown()
     {
-        // drops foreign key for table `user`
+        // drops foreign key for table `authors`
         $this->dropForeignKey(
             'fk-books-author_id',
             'books'

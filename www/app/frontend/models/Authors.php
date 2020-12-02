@@ -44,9 +44,9 @@ class Authors extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'date_birthday' => 'Date Birthday',
-            'rating' => 'Rating',
+            'name' => 'Имя(Прозвище)',
+            'date_birthday' => 'Дата рождения',
+            'rating' => 'Рейтинг',
         ];
     }
 

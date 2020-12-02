@@ -12,13 +12,14 @@ class m201130_130443_books extends Migration
      */
     public function safeUp()
     {
+        $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         $this->createTable('books', [
             'id' => $this->primaryKey(),
             'name' => $this->text()->notNull(),
             'author_id' => $this->integer()->notNull(),
             'date_write' => $this->dateTime()->notNull(),
             'rating' => $this->integer()
-        ]);
+        ], $tableOptions);
     }
 
     /**
