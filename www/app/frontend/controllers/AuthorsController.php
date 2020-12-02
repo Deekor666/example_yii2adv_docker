@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use DateTime;
 use frontend\models\Authors;
 use frontend\models\Books;
 use Yii;
@@ -23,7 +24,6 @@ class AuthorsController extends Controller
             ],
         ]);
         $books = Books::find()->where('id > 0')->orderBy('id')->indexBy('id')->all();
-        $this->view->title = 'News List';
         return $this->render('index', ['listDataProvider' => $dataProvider, 'books' => $books]);
     }
 
@@ -48,6 +48,20 @@ class AuthorsController extends Controller
         return $this->render('view', [
             'model' => $model,
         ]);
+    }
+
+    public function actionUpdate($id)
+    {
+        $author = Authors::findOne($id);
+        if ($author->load(Yii::$app->request->post())) {
+            $author->save();
+            $this->redirect(['authors/view', 'id' => $author->id]);
+        }
+
+        return $this->render('update', [
+            'model' => $author,
+        ]);
+
     }
 
 

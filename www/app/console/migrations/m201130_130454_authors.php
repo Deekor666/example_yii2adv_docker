@@ -12,12 +12,13 @@ class m201130_130454_authors extends Migration
      */
     public function safeUp()
     {
+        $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         $this->createTable('authors', [
             'id' => $this->primaryKey(),
-            'name' => $this->text()->notNull()->append('CHARACTER SET utf8 COLLATE utf8_unicode_ci'),
+            'name' => $this->text()->notNull(),
             'date_birthday' => $this->dateTime()->notNull(),
             'rating' => $this->integer()
-        ], 'CHARACTER SET utf8 COLLATE utf8_unicode_ci');
+        ], $tableOptions);
 
     }
 
