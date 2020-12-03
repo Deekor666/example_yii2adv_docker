@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'date_birthday',
                 'label' => 'Дата рождения',
                 'value'=>function($data){
-                    return date('d-m-Y', $data->date_birthday);
+                    return Yii::$app->formatter->asDate($data->date_birthday, 'php:d-m-Y');
                 }
             ],
             [
@@ -50,6 +50,15 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $data->rating;
                 }
             ],
+            [
+                'attribute' => 'books',
+                'label' => 'Книги',
+                'format' => 'raw',
+                'value'=>function($data){
+                    return Html::a('Список книг', ['books/index', 'authorId' => $data->id], ['class' => 'profile-link btn']);
+                }
+            ],
+
         ],
     ]) ?>
 

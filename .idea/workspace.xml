@@ -24,21 +24,11 @@
   <component name="ChangeListManager">
     <list default="true" id="58a5ff63-ed22-40ba-ae30-80373ea9b46d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/console/migrations/m201130_130443_books.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/console/migrations/m201130_130443_books.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/console/migrations/m201130_130454_authors.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/console/migrations/m201130_130454_authors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/console/migrations/m201130_132426_addAuthorIdForeignKey.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/console/migrations/m201130_132426_addAuthorIdForeignKey.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/frontend/controllers/AuthorsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/frontend/controllers/AuthorsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/frontend/controllers/BooksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/frontend/controllers/BooksController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/frontend/models/Authors.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/frontend/models/Authors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/frontend/models/Books.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/frontend/models/Books.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/frontend/views/authors/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/frontend/views/authors/_form.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/frontend/views/authors/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/frontend/views/authors/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/frontend/views/authors/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/frontend/views/authors/update.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/frontend/views/authors/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/frontend/views/authors/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/frontend/views/books/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/frontend/views/books/_form.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/frontend/views/books/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/frontend/views/books/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/frontend/views/books/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/frontend/views/books/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/frontend/views/books/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/frontend/views/books/update.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/frontend/views/books/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/frontend/views/books/view.php" afterDir="false" />
     </list>
     <list id="4140d331-5d03-4d6a-91d8-8b913d49259c" name="noversion" comment="">
@@ -370,6 +360,7 @@
       <workItem from="1606741674671" duration="12651000" />
       <workItem from="1606830139185" duration="9423000" />
       <workItem from="1606898397386" duration="11339000" />
+      <workItem from="1606980306617" duration="4689000" />
     </task>
     <task id="LOCAL-00001" summary="Test clone project and docker run. Write README.md">
       <created>1606495994708</created>
@@ -496,19 +487,20 @@
     </state>
     <state x="2174" y="371" width="490" height="870" key="Vcs.Push.Dialog.v2/56.27.1864.1053/1920.0.900.1600@1920.0.900.1600" timestamp="1606841503262" />
     <state x="583" y="271" width="800" height="572" key="Vcs.Push.Dialog.v2/56.27.1864.1053/1920.0.900.1600@56.27.1864.1053" timestamp="1606831320822" />
-    <state x="768" y="468" width="439" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606831412880">
-      <screen x="56" y="27" width="1864" height="1053" />
+    <state x="2264" y="670" width="369" height="269" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606911362957">
+      <screen x="1920" y="0" width="900" height="1600" />
     </state>
+    <state x="2264" y="670" width="369" height="269" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/56.27.1864.1053/1920.0.900.1600@1920.0.900.1600" timestamp="1606911362957" />
     <state x="768" y="468" width="439" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/56.27.1864.1053/1920.0.900.1600@56.27.1864.1053" timestamp="1606831412880" />
-    <state x="2149" y="337" width="557" height="1263" key="find.popup" timestamp="1606909733412">
+    <state x="2149" y="337" width="557" height="1263" key="find.popup" timestamp="1606984367362">
       <screen x="1920" y="0" width="900" height="1600" />
     </state>
-    <state x="2149" y="337" width="557" height="1263" key="find.popup/56.27.1864.1053/1920.0.900.1600@1920.0.900.1600" timestamp="1606909733412" />
+    <state x="2149" y="337" width="557" height="1263" key="find.popup/56.27.1864.1053/1920.0.900.1600@1920.0.900.1600" timestamp="1606984367362" />
     <state x="680" y="138" width="748" height="831" key="find.popup/56.27.1864.1053/1920.0.900.1600@56.27.1864.1053" timestamp="1606836082748" />
-    <state x="2148" y="353" width="672" height="1031" key="search.everywhere.popup" timestamp="1606909643527">
+    <state x="2148" y="353" width="672" height="1031" key="search.everywhere.popup" timestamp="1606982204911">
       <screen x="1920" y="0" width="900" height="1600" />
     </state>
-    <state x="2148" y="353" width="672" height="1031" key="search.everywhere.popup/56.27.1864.1053/1920.0.900.1600@1920.0.900.1600" timestamp="1606909643527" />
+    <state x="2148" y="353" width="672" height="1031" key="search.everywhere.popup/56.27.1864.1053/1920.0.900.1600@1920.0.900.1600" timestamp="1606982204911" />
     <state x="651" y="259" width="672" height="678" key="search.everywhere.popup/56.27.1864.1053/1920.0.900.1600@56.27.1864.1053" timestamp="1606746083945" />
     <state x="713" y="467" width="540" height="181" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1606741677116">
       <screen x="56" y="27" width="1864" height="1053" />

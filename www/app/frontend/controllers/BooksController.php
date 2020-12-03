@@ -11,18 +11,30 @@ use yii\web\NotFoundHttpException;
 
 class BooksController extends Controller
 {
-    public function actionIndex()
+    public function actionIndex($authorId = null)
     {
         $dataProvider = new ActiveDataProvider([
             'query' => Books::find()
                 ->with('author')
-                ->indexBy('id'),
-
+                ->orderBy(['rating' => SORT_DESC])
+                ->indexBy('rating'),
             'pagination' => [
                 'pageSize' => 10,
             ],
         ]);
-        $authors = Authors::find()->indexBy('id')->all();
+
+        if ($authorId) {
+            $dataProvider = new ActiveDataProvider([
+                'query' => Books::find()
+                    ->where(['author_id' => $authorId])
+                    ->orderBy(['date_write' => SORT_ASC])
+                    ->indexBy('rating'),
+                'pagination' => [
+                    'pageSize' => 10,
+                ],
+            ]);
+        }
+        $authors = Authors::find()->indexBy('id')->asArray()->all();
         return $this->render('index', [
             'listDataProvider' => $dataProvider,
             'authors' => $authors
@@ -37,7 +49,7 @@ class BooksController extends Controller
             $model->save();
             return $this->redirect(['books/index']);
         }
-        $authors = Authors::find()->indexBy('id')->all();
+        $authors = Authors::find()->indexBy('id')->asArray()->all();
         $items = ArrayHelper::map($authors,'id','name');
         return $this->render('create', [
             'model' => $model,
@@ -51,7 +63,7 @@ class BooksController extends Controller
         if ($model === null) {
             throw new NotFoundHttpException;
         }
-        $authors = Authors::find()->indexBy('id')->all();
+        $authors = Authors::find()->indexBy('id')->asArray()->all();
 
         return $this->render('view', [
             'model' => $model,
@@ -66,12 +78,11 @@ class BooksController extends Controller
             $book->save();
             $this->redirect(['authors/view', 'id' => $book->id]);
         }
-        $authors = Authors::find()->indexBy('id')->all();
+        $authors = Authors::find()->indexBy('id')->asArray()->all();
 
         return $this->render('update', [
             'model' => $book,
             'authors' => $authors
         ]);
-
     }
 }

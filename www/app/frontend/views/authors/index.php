@@ -1,15 +1,13 @@
 <?php
 /* @var $this YiiAlias\web\View
  * @var $listDataProvider DataProvider
- *
+ * @var $books array
  */
 
 use Yii as YiiAlias;
 use yii\bootstrap\Html;
 use yii\debug\models\timeline\DataProvider;
 use yii\grid\GridView;
-use yii\widgets\ListView;
-
 $this->title = 'Авторы';
 $this->params['breadcrumbs'][] = ['label' => 'Авторы', 'url' => ['authors/index']];
 $this->params['breadcrumbs'][] = $this->title;
@@ -43,6 +41,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'label' => 'Рейтинг',
             'content'=>function($data){
                 return $data->rating;
+            }
+        ],
+        [
+            'attribute' => 'books',
+            'label' => 'Книги',
+            'content'=>function($data){
+                return Html::a('Список книг', ['books/index', 'authorId' => $data->id], ['class' => 'profile-link btn']);
             }
         ],
 
