@@ -17,14 +17,18 @@ class AuthorsController extends Controller
         $dataProvider = new ActiveDataProvider([
             'query' => Authors::find()
                 ->with('books')
+                ->orderBy(['rating' => SORT_DESC])
                 ->indexBy('id'),
 
             'pagination' => [
                 'pageSize' => 10,
             ],
         ]);
-        $books = Books::find()->where('id > 0')->orderBy('id')->indexBy('id')->all();
-        return $this->render('index', ['listDataProvider' => $dataProvider, 'books' => $books]);
+        $books = Books::find()->orderBy('rating')->indexBy('id')->all();
+        return $this->render('index', [
+            'listDataProvider' => $dataProvider,
+            'books' => $books
+        ]);
     }
 
     public function actionCreate()
@@ -35,7 +39,9 @@ class AuthorsController extends Controller
             $model->save();
             return $this->redirect(['authors/index']);
         }
-        return $this->render('create', ['model' => $model]);
+        return $this->render('create', [
+            'model' => $model
+        ]);
     }
 
     public function actionView($id)
@@ -63,6 +69,4 @@ class AuthorsController extends Controller
         ]);
 
     }
-
-
 }

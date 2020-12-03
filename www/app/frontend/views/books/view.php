@@ -49,9 +49,9 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'attribute' => 'date_write',
-                'label' => 'Дата рождения',
+                'label' => 'Дата Издания',
                 'value'=>function($data){
-                    return date('d-m-Y', $data->date_write);
+                    return Yii::$app->formatter->asDate($data->date_write, 'php:d-m-Y');
                 }
             ],
             [
