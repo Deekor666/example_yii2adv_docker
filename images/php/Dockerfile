@@ -13,21 +13,23 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) gd pdo pdo_mysql
      
 # Install composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+#RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
  
 # Install git
-RUN apt-get install -y git
+#RUN apt-get install -y git
  
 # Install phpunit
-RUN wget https://phar.phpunit.de/phpunit-6.5.phar && \
-        chmod +x phpunit-6.5.phar && \
-        mv phpunit-6.5.phar /usr/local/bin/phpunit
+
+#RUN wget https://phar.phpunit.de/phpunit-6.5.phar && \
+#        chmod +x phpunit-6.5.phar && \
+#        mv phpunit-6.5.phar /usr/local/bin/phpunit
  
  
 # Install codecept
-RUN wget http://codeception.com/codecept.phar && \
-        chmod +x codecept.phar && \
-        mv codecept.phar /usr/local/bin/codecept
+
+#RUN wget http://codeception.com/codecept.phar && \
+#        chmod +x codecept.phar && \
+#        mv codecept.phar /usr/local/bin/codecept
   
  
 # Add custom php.ini
